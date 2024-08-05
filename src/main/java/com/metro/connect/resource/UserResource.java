@@ -84,6 +84,7 @@ public class UserResource {
 
 		response.setResponseMessage("User registered Successfully");
 		response.setSuccess(true);
+		response.setStatus(HttpStatus.CREATED);
 
 		// Convert the object to a JSON string
 		String jsonString = null;
