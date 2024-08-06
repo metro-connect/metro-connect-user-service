@@ -54,6 +54,7 @@ public class UserResource {
 		if (user == null) {
 			response.setResponseMessage("user is null");
 			response.setSuccess(true);
+			response.setStatus(HttpStatus.BAD_REQUEST);
 
 			return new ResponseEntity<CommonApiResponse>(response, HttpStatus.BAD_REQUEST);
 		}
@@ -64,6 +65,7 @@ public class UserResource {
 		if (existingUser != null) {
 			response.setResponseMessage("User already register");
 			response.setSuccess(true);
+			response.setStatus(HttpStatus.BAD_REQUEST);
 
 			return new ResponseEntity<CommonApiResponse>(response, HttpStatus.BAD_REQUEST);
 		}
@@ -78,6 +80,7 @@ public class UserResource {
 		if (existingUser == null) {
 			response.setResponseMessage("failed to register user");
 			response.setSuccess(true);
+			response.setStatus(HttpStatus.INTERNAL_SERVER_ERROR);
 
 			return new ResponseEntity<CommonApiResponse>(response, HttpStatus.BAD_REQUEST);
 		}
